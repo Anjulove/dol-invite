@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#edfcf4"/><stop offset="100%" stop-color="#b8edcc"/>
+    </linearGradient>
+    <radialGradient id="sk" cx="45%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#fde8c8"/><stop offset="100%" stop-color="#f0c09a"/>
+    </radialGradient>
+    <radialGradient id="bl" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f9a0a0" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#f9a0a0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ey" cx="60%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#7a5040"/><stop offset="100%" stop-color="#3a2018"/>
+    </radialGradient>
+    <radialGradient id="cake1" cx="40%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#fff8f0"/><stop offset="100%" stop-color="#f9e0c8"/>
+    </radialGradient>
+    <radialGradient id="cake2" cx="40%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#ffe8f0"/><stop offset="100%" stop-color="#f9c0d0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="400" height="500" fill="url(#bg)"/>
+
+  <!-- 장식 -->
+  <circle cx="38"  cy="50"  r="5" fill="#b8edcc" opacity="0.6"/>
+  <circle cx="362" cy="72"  r="6" fill="#f9c6cb" opacity="0.5"/>
+  <circle cx="20"  cy="200" r="4" fill="#b8edcc" opacity="0.4"/>
+  <circle cx="378" cy="180" r="5" fill="#f9c6cb" opacity="0.45"/>
+  <text x="30"  y="90"  font-size="15" fill="#b8edcc" opacity="0.65" font-family="sans-serif">✦</text>
+  <text x="350" y="135" font-size="13" fill="#f9c6cb" opacity="0.6"  font-family="sans-serif">✦</text>
+  <text x="22"  y="350" font-size="11" fill="#b8edcc" opacity="0.5"  font-family="sans-serif">✦</text>
+  <text x="356" y="380" font-size="14" fill="#f9c6cb" opacity="0.55" font-family="sans-serif">✦</text>
+
+  <!-- 케이크 본체 (아래) -->
+  <!-- 케이크 2단 -->
+  <rect x="110" y="395" width="180" height="70" rx="14" fill="url(#cake1)"/>
+  <rect x="130" y="345" width="140" height="58" rx="12" fill="url(#cake2)"/>
+  <!-- 크림 장식 -->
+  <ellipse cx="200" cy="395" rx="90" ry="12" fill="white" opacity="0.7"/>
+  <ellipse cx="200" cy="345" rx="70" ry="10" fill="white" opacity="0.7"/>
+  <!-- 케이크 무늬 -->
+  <circle cx="155" cy="425" r="5" fill="#f9c6cb" opacity="0.8"/>
+  <circle cx="200" cy="430" r="5" fill="#b8edcc" opacity="0.8"/>
+  <circle cx="245" cy="425" r="5" fill="#fde8a0" opacity="0.8"/>
+  <circle cx="165" cy="378" r="4" fill="#f9c6cb" opacity="0.8"/>
+  <circle cx="235" cy="378" r="4" fill="#fde8a0" opacity="0.8"/>
+  <!-- 케이크 숫자 1 -->
+  <text x="200" y="385" text-anchor="middle" font-family="serif" font-size="22" font-weight="bold" fill="#d4707a">1</text>
+  <!-- 촛불 -->
+  <rect x="196" y="322" width="8" height="28" rx="3" fill="#fde8a0"/>
+  <!-- 불꽃 -->
+  <ellipse cx="200" cy="316" rx="6"  ry="9"  fill="#ff9030" opacity="0.9"/>
+  <ellipse cx="200" cy="316" rx="3.5" ry="6" fill="#ffe060" opacity="0.95"/>
+  <!-- 불꽃 glow -->
+  <ellipse cx="200" cy="316" rx="10" ry="14" fill="#ff9030" opacity="0.2"/>
+
+  <!-- 귀 -->
+  <ellipse cx="87"  cy="225" rx="22" ry="26" fill="#f0c09a"/>
+  <ellipse cx="313" cy="225" rx="22" ry="26" fill="#f0c09a"/>
+  <ellipse cx="87"  cy="225" rx="13" ry="16" fill="#e8a880" opacity="0.4"/>
+  <ellipse cx="313" cy="225" rx="13" ry="16" fill="#e8a880" opacity="0.4"/>
+
+  <!-- 얼굴 -->
+  <ellipse cx="200" cy="222" rx="115" ry="122" fill="url(#sk)"/>
+
+  <!-- 머리카락 -->
+  <ellipse cx="200" cy="107" rx="112" ry="42" fill="#8b5e3c"/>
+  <path d="M85 178 Q89 96 200 88 Q311 96 315 178 Q283 128 200 124 Q117 128 85 178Z" fill="#8b5e3c"/>
+  <ellipse cx="172" cy="100" rx="18" ry="13" fill="#7a5030"/>
+  <ellipse cx="228" cy="100" rx="18" ry="13" fill="#7a5030"/>
+
+  <!-- 볼 -->
+  <ellipse cx="130" cy="250" rx="33" ry="20" fill="url(#bl)"/>
+  <ellipse cx="270" cy="250" rx="33" ry="20" fill="url(#bl)"/>
+
+  <!-- 왼쪽 눈 (반짝이는 표정) -->
+  <ellipse cx="156" cy="210" rx="27" ry="25" fill="white"/>
+  <ellipse cx="157" cy="212" rx="19" ry="20" fill="url(#ey)"/>
+  <ellipse cx="157" cy="212" rx="12" ry="13" fill="#2a1510"/>
+  <circle  cx="167" cy="204" r="7"  fill="white"/>
+  <circle  cx="151" cy="216" r="3"  fill="white" opacity="0.5"/>
+  <path d="M131 200 Q156 188 182 200" stroke="#8b5e3c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- 오른쪽 눈 -->
+  <ellipse cx="244" cy="210" rx="27" ry="25" fill="white"/>
+  <ellipse cx="245" cy="212" rx="19" ry="20" fill="url(#ey)"/>
+  <ellipse cx="245" cy="212" rx="12" ry="13" fill="#2a1510"/>
+  <circle  cx="255" cy="204" r="7"  fill="white"/>
+  <circle  cx="239" cy="216" r="3"  fill="white" opacity="0.5"/>
+  <path d="M219 200 Q244 188 270 200" stroke="#8b5e3c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- 눈썹 (약간 올라간) -->
+  <path d="M133 184 Q156 173 178 180" stroke="#8b5e3c" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M222 180 Q244 173 267 184" stroke="#8b5e3c" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- 코 -->
+  <ellipse cx="200" cy="253" rx="11" ry="7" fill="#e8a080" opacity="0.3"/>
+
+  <!-- 입 (신난 표정) -->
+  <path d="M172 276 Q200 302 228 276" stroke="#e07575" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M176 280 Q200 300 224 280 Q200 295 176 280Z" fill="#f09090" opacity="0.35"/>
+  <path d="M182 280 Q200 295 218 280" fill="white" opacity="0.4"/>
+
+  <!-- 손 (케이크 양쪽에 올려둔 느낌) -->
+  <ellipse cx="118" cy="338" rx="22" ry="16" fill="#f0c09a" transform="rotate(-20 118 338)"/>
+  <ellipse cx="282" cy="338" rx="22" ry="16" fill="#f0c09a" transform="rotate(20 282 338)"/>
+
+  <text x="200" y="492" text-anchor="middle" font-family="serif" font-size="14" fill="#2a9060" opacity="0.85">🎂 두 손 가득 행복해라 🎂</text>
+</svg>

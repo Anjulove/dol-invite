@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0%" stop-color="#1e1848"/><stop offset="100%" stop-color="#4a2878"/>
+    </linearGradient>
+    <radialGradient id="sk" cx="45%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#fde8c8"/><stop offset="100%" stop-color="#f0c09a"/>
+    </radialGradient>
+    <radialGradient id="bl" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f9a0a0" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#f9a0a0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="moon" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#fffde0"/><stop offset="100%" stop-color="#fde8a0"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fde8a0" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#fde8a0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="400" height="500" fill="url(#bg)"/>
+
+  <!-- 별들 -->
+  <circle cx="40"  cy="35"  r="2" fill="white" opacity="0.9"/>
+  <circle cx="90"  cy="20"  r="1.5" fill="white" opacity="0.7"/>
+  <circle cx="150" cy="45"  r="2.5" fill="white" opacity="0.8"/>
+  <circle cx="220" cy="18"  r="1.5" fill="white" opacity="0.7"/>
+  <circle cx="280" cy="38"  r="2" fill="white" opacity="0.85"/>
+  <circle cx="340" cy="22"  r="1.5" fill="white" opacity="0.7"/>
+  <circle cx="370" cy="55"  r="2" fill="white" opacity="0.75"/>
+  <circle cx="60"  cy="80"  r="1.5" fill="white" opacity="0.6"/>
+  <circle cx="320" cy="75"  r="2" fill="white" opacity="0.7"/>
+  <circle cx="380" cy="120" r="1.5" fill="white" opacity="0.6"/>
+  <circle cx="25"  cy="140" r="2" fill="white" opacity="0.65"/>
+  <circle cx="110" cy="100" r="1.5" fill="white" opacity="0.6"/>
+
+  <!-- 반짝이는 별 -->
+  <text x="58"  y="52"  font-size="14" fill="white" opacity="0.75" font-family="sans-serif">✦</text>
+  <text x="338" y="48"  font-size="12" fill="white" opacity="0.65" font-family="sans-serif">✦</text>
+  <text x="18"  y="165" font-size="10" fill="white" opacity="0.55" font-family="sans-serif">✦</text>
+  <text x="360" y="155" font-size="11" fill="white" opacity="0.6"  font-family="sans-serif">✦</text>
+  <text x="175" cy="28" font-size="10" fill="white" opacity="0.6"  font-family="sans-serif">✦</text>
+
+  <!-- 달 -->
+  <ellipse cx="312" cy="105" rx="52" ry="52" fill="url(#moon)"/>
+  <!-- 달 그림자 (초승달 느낌) -->
+  <ellipse cx="328" cy="100" rx="40" ry="42" fill="#4a2878"/>
+  <!-- 달 광채 -->
+  <ellipse cx="312" cy="105" rx="70" ry="70" fill="url(#glow)"/>
+  <!-- 달 표면 크레이터 -->
+  <circle cx="296" cy="92"  r="5" fill="#f5d070" opacity="0.4"/>
+  <circle cx="306" cy="110" r="3" fill="#f5d070" opacity="0.3"/>
+
+  <!-- 구름처럼 포근한 이불 -->
+  <ellipse cx="200" cy="470" rx="170" ry="60" fill="#d8b8f0"/>
+  <ellipse cx="140" cy="448" rx="70"  ry="38" fill="#e8d0f8"/>
+  <ellipse cx="260" cy="448" rx="70"  ry="38" fill="#e8d0f8"/>
+  <ellipse cx="200" cy="438" rx="90"  ry="42" fill="#f0e8fc"/>
+  <!-- 이불 패턴 별 -->
+  <text x="155" y="455" font-size="13" fill="#c8a0e0" opacity="0.5" font-family="sans-serif">✦</text>
+  <text x="218" y="458" font-size="10" fill="#c8a0e0" opacity="0.5" font-family="sans-serif">✦</text>
+
+  <!-- 귀 -->
+  <ellipse cx="87"  cy="300" rx="22" ry="26" fill="#f0c09a"/>
+  <ellipse cx="313" cy="300" rx="22" ry="26" fill="#f0c09a"/>
+  <ellipse cx="87"  cy="300" rx="13" ry="16" fill="#e8a880" opacity="0.4"/>
+  <ellipse cx="313" cy="300" rx="13" ry="16" fill="#e8a880" opacity="0.4"/>
+
+  <!-- 얼굴 -->
+  <ellipse cx="200" cy="298" rx="115" ry="122" fill="url(#sk)"/>
+
+  <!-- 머리카락 -->
+  <ellipse cx="200" cy="183" rx="112" ry="42" fill="#8b5e3c"/>
+  <path d="M85 253 Q89 170 200 162 Q311 170 315 253 Q283 203 200 199 Q117 203 85 253Z" fill="#8b5e3c"/>
+
+  <!-- 볼 블러시 (자는 동안) -->
+  <ellipse cx="132" cy="325" rx="33" ry="20" fill="url(#bl)"/>
+  <ellipse cx="268" cy="325" rx="33" ry="20" fill="url(#bl)"/>
+
+  <!-- 감긴 눈 (수면) -->
+  <!-- 왼쪽 눈 (위로 살짝 볼록한 눈꺼풀) -->
+  <path d="M128 278 Q156 262 184 278" stroke="#8b5e3c" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <!-- 속눈썹 -->
+  <path d="M133 276 Q131 270 128 267" stroke="#8b5e3c" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M148 271 Q147 265 146 261" stroke="#8b5e3c" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M163 269 Q163 263 163 259" stroke="#8b5e3c" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M179 272 Q180 266 182 262" stroke="#8b5e3c" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- 아래 눈꺼풀 -->
+  <path d="M130 278 Q156 286 182 278" stroke="#8b5e3c" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.4"/>
+
+  <!-- 오른쪽 눈 (감김) -->
+  <path d="M216 278 Q244 262 272 278" stroke="#8b5e3c" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <path d="M221 276 Q219 270 216 267" stroke="#8b5e3c" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M236 271 Q235 265 234 261" stroke="#8b5e3c" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M251 269 Q251 263 251 259" stroke="#8b5e3c" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M267 272 Q268 266 270 262" stroke="#8b5e3c" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M218 278 Q244 286 270 278" stroke="#8b5e3c" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.4"/>
+
+  <!-- 눈썹 (편안한) -->
+  <path d="M131 258 Q155 250 178 255" stroke="#8b5e3c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M222 255 Q245 250 268 258" stroke="#8b5e3c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- 코 -->
+  <ellipse cx="200" cy="328" rx="11" ry="7" fill="#e8a080" opacity="0.28"/>
+
+  <!-- 입 (살짝 벌린 자는 입) -->
+  <path d="M185 352 Q200 364 215 352" stroke="#e08080" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="200" cy="358" rx="10" ry="6" fill="#f09090" opacity="0.2"/>
+
+  <!-- zzz -->
+  <text x="310" y="220" font-size="22" fill="white" opacity="0.6" font-family="sans-serif" font-weight="bold">z</text>
+  <text x="330" y="200" font-size="18" fill="white" opacity="0.45" font-family="sans-serif" font-weight="bold">z</text>
+  <text x="348" y="183" font-size="14" fill="white" opacity="0.3" font-family="sans-serif" font-weight="bold">z</text>
+
+  <text x="200" y="492" text-anchor="middle" font-family="serif" font-size="14" fill="#e0c8f8" opacity="0.9">🌙 달콤한 꿈 꿔요 🌙</text>
+</svg>

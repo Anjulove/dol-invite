@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff5ee"/><stop offset="100%" stop-color="#f9c6cb"/>
+    </linearGradient>
+    <radialGradient id="sk" cx="45%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#fde8c8"/><stop offset="100%" stop-color="#f0c09a"/>
+    </radialGradient>
+    <radialGradient id="bl" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f9a0a0" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#f9a0a0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ey" cx="60%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#7a5040"/><stop offset="100%" stop-color="#3a2018"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="400" height="500" fill="url(#bg)"/>
+
+  <!-- 장식 도트 -->
+  <circle cx="35" cy="48" r="5" fill="#f9c6cb" opacity="0.55"/>
+  <circle cx="368" cy="78" r="7" fill="#fde8a0" opacity="0.5"/>
+  <circle cx="22" cy="220" r="4" fill="#f9c6cb" opacity="0.4"/>
+  <circle cx="378" cy="320" r="5" fill="#fde8a0" opacity="0.4"/>
+  <circle cx="50" cy="460" r="6" fill="#f9c6cb" opacity="0.45"/>
+  <circle cx="350" cy="445" r="5" fill="#fde8a0" opacity="0.45"/>
+  <text x="30" y="95"  font-size="16" fill="#fde8a0" opacity="0.6" font-family="sans-serif">✦</text>
+  <text x="348" y="140" font-size="12" fill="#f9c6cb" opacity="0.65" font-family="sans-serif">✦</text>
+  <text x="20" y="420" font-size="11" fill="#fde8a0" opacity="0.5" font-family="sans-serif">✦</text>
+  <text x="355" y="400" font-size="14" fill="#f9c6cb" opacity="0.6" font-family="sans-serif">✦</text>
+
+  <!-- 몸체 암시 -->
+  <ellipse cx="200" cy="495" rx="110" ry="50" fill="#fff0f5"/>
+
+  <!-- 귀 -->
+  <ellipse cx="87"  cy="290" rx="22" ry="26" fill="#f0c09a"/>
+  <ellipse cx="313" cy="290" rx="22" ry="26" fill="#f0c09a"/>
+  <ellipse cx="87"  cy="290" rx="13" ry="16" fill="#e8a880" opacity="0.4"/>
+  <ellipse cx="313" cy="290" rx="13" ry="16" fill="#e8a880" opacity="0.4"/>
+
+  <!-- 얼굴 -->
+  <ellipse cx="200" cy="287" rx="116" ry="123" fill="url(#sk)"/>
+
+  <!-- 머리카락 -->
+  <ellipse cx="200" cy="172" rx="113" ry="42" fill="#8b5e3c"/>
+  <path d="M84 242 Q88 158 200 150 Q312 158 316 242 Q284 192 200 188 Q116 192 84 242Z" fill="#8b5e3c"/>
+  <ellipse cx="172" cy="164" rx="18" ry="13" fill="#7a5030"/>
+  <ellipse cx="228" cy="164" rx="18" ry="13" fill="#7a5030"/>
+
+  <!-- 볼 블러시 -->
+  <ellipse cx="130" cy="315" rx="34" ry="21" fill="url(#bl)"/>
+  <ellipse cx="270" cy="315" rx="34" ry="21" fill="url(#bl)"/>
+
+  <!-- 왼쪽 눈 -->
+  <ellipse cx="155" cy="274" rx="27" ry="25" fill="white"/>
+  <ellipse cx="156" cy="276" rx="19" ry="20" fill="url(#ey)"/>
+  <ellipse cx="156" cy="276" rx="12" ry="13" fill="#2a1510"/>
+  <circle  cx="165" cy="268" r="7"  fill="white"/>
+  <circle  cx="150" cy="280" r="3"  fill="white" opacity="0.5"/>
+  <path d="M130 265 Q155 253 181 265" stroke="#8b5e3c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- 오른쪽 눈 -->
+  <ellipse cx="245" cy="274" rx="27" ry="25" fill="white"/>
+  <ellipse cx="246" cy="276" rx="19" ry="20" fill="url(#ey)"/>
+  <ellipse cx="246" cy="276" rx="12" ry="13" fill="#2a1510"/>
+  <circle  cx="255" cy="268" r="7"  fill="white"/>
+  <circle  cx="240" cy="280" r="3"  fill="white" opacity="0.5"/>
+  <path d="M220 265 Q245 253 271 265" stroke="#8b5e3c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- 눈썹 -->
+  <path d="M133 249 Q155 240 177 246" stroke="#8b5e3c" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M223 246 Q245 240 267 249" stroke="#8b5e3c" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- 코 -->
+  <ellipse cx="200" cy="318" rx="12" ry="8" fill="#e8a080" opacity="0.32"/>
+  <circle  cx="194" cy="320" r="4" fill="#d48870" opacity="0.28"/>
+  <circle  cx="206" cy="320" r="4" fill="#d48870" opacity="0.28"/>
+
+  <!-- 입 -->
+  <path d="M178 344 Q200 364 222 344" stroke="#e07575" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="200" cy="354" rx="15" ry="8" fill="#f09090" opacity="0.28"/>
+
+  <!-- 꽃 왕관 밴드 -->
+  <path d="M96 217 Q150 197 200 193 Q250 197 304 217" stroke="#7ab648" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+  <!-- 왼쪽 꽃 -->
+  <g transform="translate(112,210)">
+    <circle cx="0" cy="-12" r="9" fill="#f0b0ba"/>
+    <circle cx="10" cy="-6" r="9" fill="#f0b0ba"/>
+    <circle cx="8"  cy="7"  r="9" fill="#f0b0ba"/>
+    <circle cx="-8" cy="7"  r="9" fill="#f0b0ba"/>
+    <circle cx="-10" cy="-6" r="9" fill="#f0b0ba"/>
+    <circle cx="0"  cy="0"  r="7" fill="#fde8a0"/>
+  </g>
+
+  <!-- 가운데 큰 꽃 -->
+  <g transform="translate(200,193)">
+    <circle cx="0"   cy="-15" r="10" fill="#f9c6cb"/>
+    <circle cx="13"  cy="-7"  r="10" fill="#f9c6cb"/>
+    <circle cx="11"  cy="8"   r="10" fill="#f9c6cb"/>
+    <circle cx="-11" cy="8"   r="10" fill="#f9c6cb"/>
+    <circle cx="-13" cy="-7"  r="10" fill="#f9c6cb"/>
+    <circle cx="0"   cy="0"   r="8"  fill="#fde8a0"/>
+  </g>
+
+  <!-- 오른쪽 꽃 -->
+  <g transform="translate(288,210)">
+    <circle cx="0"   cy="-12" r="9" fill="#f0b0ba"/>
+    <circle cx="10"  cy="-6"  r="9" fill="#f0b0ba"/>
+    <circle cx="8"   cy="7"   r="9" fill="#f0b0ba"/>
+    <circle cx="-8"  cy="7"   r="9" fill="#f0b0ba"/>
+    <circle cx="-10" cy="-6"  r="9" fill="#f0b0ba"/>
+    <circle cx="0"   cy="0"   r="7" fill="#fde8a0"/>
+  </g>
+
+  <!-- 작은 꽃 2개 -->
+  <g transform="translate(157,198)">
+    <circle cx="0"  cy="-9" r="6" fill="#fde8a0"/>
+    <circle cx="8"  cy="-4" r="6" fill="#fde8a0"/>
+    <circle cx="6"  cy="5"  r="6" fill="#fde8a0"/>
+    <circle cx="-6" cy="5"  r="6" fill="#fde8a0"/>
+    <circle cx="-8" cy="-4" r="6" fill="#fde8a0"/>
+    <circle cx="0"  cy="0"  r="5" fill="#f5b030"/>
+  </g>
+  <g transform="translate(243,198)">
+    <circle cx="0"  cy="-9" r="6" fill="#fde8a0"/>
+    <circle cx="8"  cy="-4" r="6" fill="#fde8a0"/>
+    <circle cx="6"  cy="5"  r="6" fill="#fde8a0"/>
+    <circle cx="-6" cy="5"  r="6" fill="#fde8a0"/>
+    <circle cx="-8" cy="-4" r="6" fill="#fde8a0"/>
+    <circle cx="0"  cy="0"  r="5" fill="#f5b030"/>
+  </g>
+
+  <!-- 잎사귀 -->
+  <ellipse cx="137" cy="206" rx="12" ry="5" fill="#7ab648" transform="rotate(-30 137 206)"/>
+  <ellipse cx="263" cy="206" rx="12" ry="5" fill="#7ab648" transform="rotate(30 263 206)"/>
+  <ellipse cx="178" cy="198" rx="9"  ry="4" fill="#7ab648" transform="rotate(-15 178 198)"/>
+  <ellipse cx="222" cy="198" rx="9"  ry="4" fill="#7ab648" transform="rotate(15 222 198)"/>
+
+  <text x="200" y="478" text-anchor="middle" font-family="serif" font-size="14" fill="#d4707a" opacity="0.85">🌸 첫돌을 축하해요 🌸</text>
+</svg>
