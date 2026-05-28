@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- ✏️ 고객별로 아래 OG 태그 수정 (카카오톡 미리보기용) -->
+  <!-- ✏️ 고객별 수정 (카카오톡 미리보기) -->
   <meta property="og:title" content="김민지의 돌잔치에 초대합니다 🎂">
   <meta property="og:description" content="2026년 6월 15일 일요일 오전 11시 · 그랜드 호텔">
-  <meta property="og:image" content="./photo.jpg">
+  <meta property="og:image" content="./photo1.jpg">
   <meta property="og:url" content="https://invite.foreverus.kr/minji">
   <meta property="og:type" content="website">
 
@@ -16,12 +16,17 @@
   <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
 
   <style>
+    :root {
+      --pink:  #d4707a;
+      --peach: #e8a87c;
+      --bg:    #fff8f2;
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Pretendard', sans-serif;
-      background: #fff8f2;
-      min-height: 100vh;
+      background: var(--bg);
       overflow-x: hidden;
     }
 
@@ -31,13 +36,11 @@
       top: -30px;
       animation: fall linear infinite;
       pointer-events: none;
-      opacity: 0.75;
       z-index: 0;
     }
-
     @keyframes fall {
-      0%   { transform: translateY(-30px) rotate(0deg);   opacity: 0.75; }
-      100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
+      0%   { transform: translateY(-30px) rotate(0deg);   opacity: 0.7; }
+      100% { transform: translateY(105vh) rotate(400deg); opacity: 0;   }
     }
 
     .container {
@@ -45,106 +48,262 @@
       margin: 0 auto;
       position: relative;
       z-index: 1;
-      padding-bottom: 40px;
-    }
-
-    /* 상단 사진 */
-    .hero {
-      width: 100%;
-      height: 440px;
-      overflow: hidden;
-      position: relative;
-      background: linear-gradient(135deg, #f9c6cb, #fde8a0);
-    }
-
-    .hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 140px;
-      background: linear-gradient(transparent, #fff8f2);
+      padding-bottom: 60px;
     }
 
     /* 카드 공통 */
     .card {
       background: #fff;
       border-radius: 24px;
+      padding: 30px 22px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
       margin: 12px 16px;
-      padding: 28px 22px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
     }
 
-    /* 타이틀 영역 */
-    .title-section {
-      text-align: center;
-      padding: 32px 20px 8px;
-    }
-
-    .emoji-row {
-      font-size: 26px;
-      letter-spacing: 10px;
-      margin-bottom: 14px;
-    }
-
-    .title-section h1 {
-      font-size: 26px;
-      color: #d4707a;
-      margin-bottom: 6px;
-    }
-
-    .title-section .subtitle {
-      font-size: 14px;
-      color: #aaa;
-    }
-
-    .baby-name-badge {
-      display: inline-block;
-      background: linear-gradient(135deg, #f9c6cb, #fde8a0);
-      border-radius: 50px;
-      padding: 8px 26px;
-      font-size: 20px;
+    .section-label {
+      font-size: 11px;
       font-weight: 700;
-      color: #c0545e;
-      margin-top: 16px;
-    }
-
-    /* 섹션 제목 */
-    .section-title {
-      font-size: 12px;
-      color: #d4707a;
+      color: var(--pink);
       letter-spacing: 3px;
       text-align: center;
       margin-bottom: 22px;
     }
 
-    /* 메시지 */
-    .message {
+    /* fade-in */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+
+    /* ============================
+       1. 메인 표지
+    ============================ */
+    .cover {
+      height: 100svh;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #f9c6cb, #fde8a0);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .cover > img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cover-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 35%, rgba(0,0,0,0.6) 100%);
+    }
+
+    .cover-text {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #fff;
+      padding-bottom: 70px;
+    }
+
+    .cover-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.22);
+      backdrop-filter: blur(8px);
+      border-radius: 50px;
+      padding: 5px 18px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+
+    .cover-text h1 {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+
+    .cover-date {
+      font-size: 15px;
+      opacity: 0.88;
+      letter-spacing: 1px;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      color: rgba(255,255,255,0.65);
+      font-size: 10px;
+      letter-spacing: 2px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      animation: bob 2.2s ease-in-out infinite;
+    }
+
+    .scroll-hint::after { content: '↓'; font-size: 16px; }
+
+    @keyframes bob {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(7px); }
+    }
+
+
+    /* ============================
+       2. 인사 문구
+    ============================ */
+    .greeting-text {
       text-align: center;
       font-size: 15px;
-      color: #777;
-      line-height: 2.1;
+      color: #666;
+      line-height: 2.2;
     }
 
-    .message .highlight {
-      color: #d4707a;
+    .greeting-text .baby-name {
+      font-size: 17px;
       font-weight: 700;
+      color: var(--pink);
     }
 
-    /* 정보 행 */
+    .parents-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 28px;
+      margin-top: 26px;
+      padding-top: 22px;
+      border-top: 1px dashed #f0dede;
+    }
+
+    .parent .role  { font-size: 11px; color: #bbb; margin-bottom: 5px; }
+    .parent .pname { font-size: 15px; font-weight: 700; color: #555; }
+    .heart         { font-size: 18px; color: #f9c6cb; }
+
+
+    /* ============================
+       3. 사진 아카이빙
+    ============================ */
+    .photo-section { margin: 12px 0; }
+    .photo-section .section-label { padding: 0 16px; margin-bottom: 14px; }
+
+    .photo-scroll {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 0 16px 10px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .photo-scroll::-webkit-scrollbar { display: none; }
+
+    .photo-item {
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      width: 220px;
+      height: 290px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #f9c6cb, #fde8a0);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    .photo-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+
+    /* ============================
+       4. 날짜 & 달력
+    ============================ */
+    .cal-header {
+      text-align: center;
+      font-size: 16px;
+      font-weight: 700;
+      color: #444;
+      margin-bottom: 16px;
+    }
+
+    .cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 3px;
+      text-align: center;
+    }
+
+    .cal-dow {
+      font-size: 11px;
+      font-weight: 600;
+      color: #ccc;
+      padding-bottom: 8px;
+    }
+    .cal-dow.sun { color: #e99; }
+    .cal-dow.sat { color: #99b; }
+
+    .cal-cell {
+      font-size: 13px;
+      color: #999;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+    .cal-cell.sun { color: #e99; }
+    .cal-cell.sat { color: #99b; }
+    .cal-cell.event {
+      background: var(--pink);
+      color: #fff !important;
+      font-weight: 800;
+      box-shadow: 0 4px 12px rgba(212,112,122,0.45);
+    }
+
+    .time-chips {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px dashed #f0dede;
+    }
+
+    .time-chip {
+      background: #fff0f2;
+      border-radius: 50px;
+      padding: 9px 20px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--pink);
+    }
+
+
+    /* ============================
+       5. 장소 안내
+    ============================ */
     .info-row {
       display: flex;
       align-items: flex-start;
       gap: 14px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
-
-    .info-row:last-child { margin-bottom: 0; }
+    .info-row:last-of-type { margin-bottom: 0; }
 
     .info-icon {
       width: 42px;
@@ -158,47 +317,66 @@
       flex-shrink: 0;
     }
 
-    .info-text .label {
-      font-size: 11px;
-      color: #bbb;
-      margin-bottom: 3px;
-    }
+    .info-text .label { font-size: 11px; color: #bbb; margin-bottom: 3px; }
+    .info-text .value { font-size: 15px; color: #444; font-weight: 700; line-height: 1.5; }
+    .info-text .sub   { font-size: 13px; color: #999; margin-top: 2px; }
 
-    .info-text .value {
-      font-size: 15px;
-      color: #444;
-      font-weight: 700;
-      line-height: 1.5;
-    }
-
-    .info-text .sub {
-      font-size: 13px;
-      color: #999;
-      margin-top: 2px;
-    }
-
-    /* 지도 버튼 */
     .map-btn {
       display: block;
       margin-top: 18px;
       background: linear-gradient(135deg, #f9c6cb, #fde8a0);
       color: #c0545e;
       text-align: center;
-      padding: 14px;
+      padding: 15px;
       border-radius: 14px;
       font-size: 15px;
       font-weight: 700;
       text-decoration: none;
     }
+    .map-btn:active { opacity: 0.78; }
 
-    .map-btn:active { opacity: 0.75; }
 
-    /* 하단 여백 */
+    /* ============================
+       6. 계좌 안내
+    ============================ */
+    .account-row {
+      background: #fff8f8;
+      border-radius: 16px;
+      padding: 16px 18px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .account-row:last-child { margin-bottom: 0; }
+
+    .account-left .role  { font-size: 11px; color: #bbb; margin-bottom: 4px; }
+    .account-left .aname { font-size: 15px; font-weight: 700; color: #555; }
+    .account-left .bank  { font-size: 13px; color: #999; margin-top: 3px; }
+
+    .copy-btn {
+      flex-shrink: 0;
+      background: var(--pink);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 9px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Pretendard', sans-serif;
+      transition: background 0.2s;
+    }
+    .copy-btn.copied { background: #bbb; }
+
+    /* 푸터 */
     .footer {
       text-align: center;
       padding: 16px;
-      font-size: 12px;
+      font-size: 11px;
       color: #ccc;
+      letter-spacing: 1px;
     }
   </style>
 </head>
@@ -208,52 +386,84 @@
 
 <div class="container">
 
-  <!-- 아기 사진 -->
-  <div class="hero">
-    <!-- ✏️ photo.jpg 를 같은 폴더에 넣어주세요 -->
-    <img src="./photo.jpg" alt="아기 사진">
-    <div class="hero-overlay"></div>
+  <!-- ===== 1. 메인 표지 ===== -->
+  <div class="cover">
+    <!-- ✏️ 메인 사진 -->
+    <img src="./photo1.jpg" alt="메인 사진">
+    <div class="cover-overlay"></div>
+    <div class="cover-text">
+      <div class="cover-badge">첫 번째 생일 🎀</div>
+      <!-- ✏️ 아이 이름 -->
+      <h1>김민지의 돌잔치</h1>
+      <!-- ✏️ 날짜 -->
+      <div class="cover-date">2026년 6월 15일 일요일</div>
+    </div>
+    <div class="scroll-hint">SCROLL</div>
   </div>
 
-  <!-- 타이틀 -->
-  <div class="title-section">
-    <div class="emoji-row">🎀 🎂 🎈</div>
-    <h1>첫 번째 생일</h1>
-    <p class="subtitle">소중한 분들을 초대합니다</p>
-    <!-- ✏️ 아이 이름 수정 -->
-    <div class="baby-name-badge">김민지의 돌잔치</div>
-  </div>
 
-  <!-- 인사말 -->
-  <div class="card">
-    <div class="section-title">✦ 인사말 ✦</div>
-    <!-- ✏️ 인사말 수정 -->
-    <p class="message">
-      햇살처럼 따뜻한 우리 아이가<br>
-      <span class="highlight">벌써 한 살</span>이 되었습니다.<br><br>
-      소중한 분들과 함께<br>
-      이 기쁜 날을 나누고 싶습니다.<br><br>
-      부디 오셔서 자리를 빛내주세요 🌸
+  <!-- ===== 2. 인사 문구 ===== -->
+  <div class="card fade-in" style="margin-top:16px;">
+    <div class="section-label">✦ 인사말 ✦</div>
+    <!-- ✏️ 인사 문구 -->
+    <p class="greeting-text">
+      포근한 봄볕 아래<br>
+      <span class="baby-name">김민지</span>가 태어난 지<br>
+      어느덧 <strong>일 년</strong>이 되었습니다.<br><br>
+      이 작은 아이가 자라는 모습을<br>
+      소중한 분들과 함께 나누고 싶어<br>
+      조심스레 초대장을 전합니다.<br><br>
+      부디 오셔서 축복해 주세요 🌸
     </p>
-  </div>
-
-  <!-- 행사 정보 -->
-  <div class="card">
-    <div class="section-title">✦ 행사 안내 ✦</div>
-
-    <!-- ✏️ 날짜/시간 수정 -->
-    <div class="info-row">
-      <div class="info-icon">📅</div>
-      <div class="info-text">
-        <div class="label">날짜</div>
-        <div class="value">2026년 6월 15일 일요일</div>
-        <div class="sub">오전 11시 00분</div>
+    <!-- ✏️ 부모 이름 -->
+    <div class="parents-row">
+      <div class="parent">
+        <div class="role">아버지</div>
+        <div class="pname">김철수</div>
+      </div>
+      <div class="heart">♥</div>
+      <div class="parent">
+        <div class="role">어머니</div>
+        <div class="pname">이영희</div>
       </div>
     </div>
+  </div>
 
-    <!-- ✏️ 장소 수정 -->
+
+  <!-- ===== 3. 사진 아카이빙 ===== -->
+  <div class="photo-section fade-in">
+    <div class="section-label">✦ 사진 ✦</div>
+    <div class="photo-scroll">
+      <!-- ✏️ 사진 파일 교체 (같은 폴더에 photo1~5.jpg 넣기) -->
+      <div class="photo-item"><img src="./photo1.jpg" alt="사진1"></div>
+      <div class="photo-item"><img src="./photo2.jpg" alt="사진2"></div>
+      <div class="photo-item"><img src="./photo3.jpg" alt="사진3"></div>
+      <div class="photo-item"><img src="./photo4.jpg" alt="사진4"></div>
+      <div class="photo-item"><img src="./photo5.jpg" alt="사진5"></div>
+    </div>
+  </div>
+
+
+  <!-- ===== 4. 날짜 & 달력 ===== -->
+  <div class="card fade-in">
+    <div class="section-label">✦ 날짜 & 시간 ✦</div>
+    <div class="cal-header" id="cal-header"></div>
+    <div class="cal-grid"   id="cal-grid"></div>
+    <!-- ✏️ 시간 칩 -->
+    <div class="time-chips">
+      <div class="time-chip">📅 2026년 6월 15일 일요일</div>
+      <div class="time-chip">🕐 오전 11:00</div>
+    </div>
+  </div>
+
+
+  <!-- ===== 5. 장소 안내 ===== -->
+  <div class="card fade-in">
+    <div class="section-label">✦ 장소 안내 ✦</div>
+
+    <!-- ✏️ 장소 정보 수정 -->
     <div class="info-row">
-      <div class="info-icon">📍</div>
+      <div class="info-icon">🏛️</div>
       <div class="info-text">
         <div class="label">장소</div>
         <div class="value">그랜드 호텔 2층 그랜드홀</div>
@@ -261,7 +471,15 @@
       </div>
     </div>
 
-    <!-- ✏️ 주차 정보 수정 -->
+    <div class="info-row">
+      <div class="info-icon">🚇</div>
+      <div class="info-text">
+        <div class="label">대중교통</div>
+        <div class="value">2호선 강남역 3번 출구</div>
+        <div class="sub">도보 5분</div>
+      </div>
+    </div>
+
     <div class="info-row">
       <div class="info-icon">🚗</div>
       <div class="info-text">
@@ -275,25 +493,28 @@
     <a href="https://map.kakao.com" class="map-btn">🗺️ 카카오맵으로 길찾기</a>
   </div>
 
-  <!-- 연락처 -->
-  <div class="card">
-    <div class="section-title">✦ 연락처 ✦</div>
 
-    <!-- ✏️ 연락처 수정 -->
-    <div class="info-row">
-      <div class="info-icon">👨‍👩‍👧</div>
-      <div class="info-text">
-        <div class="label">아버지</div>
-        <div class="value">김철수 · 010-1234-5678</div>
+  <!-- ===== 6. 계좌 안내 ===== -->
+  <div class="card fade-in">
+    <div class="section-label">✦ 마음 전하기 ✦</div>
+
+    <!-- ✏️ 계좌 정보 수정 -->
+    <div class="account-row">
+      <div class="account-left">
+        <div class="role">아버지 · 김철수</div>
+        <div class="aname">신한은행</div>
+        <div class="bank">110-123-456789</div>
       </div>
+      <button class="copy-btn" onclick="copyAccount(this, '110123456789')">복사</button>
     </div>
 
-    <div class="info-row">
-      <div class="info-icon">💝</div>
-      <div class="info-text">
-        <div class="label">어머니</div>
-        <div class="value">이영희 · 010-8765-4321</div>
+    <div class="account-row">
+      <div class="account-left">
+        <div class="role">어머니 · 이영희</div>
+        <div class="aname">국민은행</div>
+        <div class="bank">123-45-678901</div>
       </div>
+      <button class="copy-btn" onclick="copyAccount(this, '12345678901')">복사</button>
     </div>
   </div>
 
@@ -302,19 +523,73 @@
 </div>
 
 <script>
-  const symbols = ['🌸', '🌷', '✨', '🌺', '⭐', '🍀', '🎀'];
-  const wrap = document.getElementById('petals');
-
+  /* ---- 꽃잎 ---- */
+  const symbols = ['🌸','🌷','✨','🌺','⭐','🍀','🎀'];
+  const wrap    = document.getElementById('petals');
   for (let i = 0; i < 18; i++) {
     const el = document.createElement('div');
-    el.className = 'petal';
-    el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-    el.style.left              = (Math.random() * 100) + 'vw';
-    el.style.fontSize          = (Math.random() * 10 + 10) + 'px';
+    el.className           = 'petal';
+    el.textContent         = symbols[Math.floor(Math.random() * symbols.length)];
+    el.style.left          = (Math.random() * 100) + 'vw';
+    el.style.fontSize      = (Math.random() * 10 + 10) + 'px';
     el.style.animationDuration = (Math.random() * 7 + 7) + 's';
-    el.style.animationDelay   = (Math.random() * 10) + 's';
+    el.style.animationDelay    = (Math.random() * 10) + 's';
     wrap.appendChild(el);
   }
+
+  /* ---- 달력 ---- */
+  // ✏️ 행사 날짜 설정
+  const EVENT_YEAR  = 2026;
+  const EVENT_MONTH = 6;    // 6 = 6월
+  const EVENT_DAY   = 15;
+
+  (function buildCalendar() {
+    const months = ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'];
+    document.getElementById('cal-header').textContent =
+      `${EVENT_YEAR}년 ${months[EVENT_MONTH - 1]}`;
+
+    const grid     = document.getElementById('cal-grid');
+    const dowNames = ['일','월','화','수','목','금','토'];
+
+    dowNames.forEach((d, i) => {
+      const cell = document.createElement('div');
+      cell.className = 'cal-dow' + (i === 0 ? ' sun' : i === 6 ? ' sat' : '');
+      cell.textContent = d;
+      grid.appendChild(cell);
+    });
+
+    const firstDow = new Date(EVENT_YEAR, EVENT_MONTH - 1, 1).getDay();
+    const lastDate = new Date(EVENT_YEAR, EVENT_MONTH, 0).getDate();
+
+    for (let i = 0; i < firstDow; i++) grid.appendChild(document.createElement('div'));
+
+    for (let d = 1; d <= lastDate; d++) {
+      const dow  = (firstDow + d - 1) % 7;
+      const cell = document.createElement('div');
+      cell.className = 'cal-cell'
+        + (dow === 0 ? ' sun' : '')
+        + (dow === 6 ? ' sat' : '')
+        + (d === EVENT_DAY ? ' event' : '');
+      cell.textContent = d;
+      grid.appendChild(cell);
+    }
+  })();
+
+  /* ---- 계좌 복사 ---- */
+  function copyAccount(btn, number) {
+    navigator.clipboard.writeText(number).then(() => {
+      btn.textContent = '완료!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = '복사'; btn.classList.remove('copied'); }, 2000);
+    });
+  }
+
+  /* ---- 스크롤 fade-in ---- */
+  const io = new IntersectionObserver(
+    entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+    { threshold: 0.12 }
+  );
+  document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
 </script>
 
 </body>
