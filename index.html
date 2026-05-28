@@ -96,7 +96,6 @@
     @media (min-width: 500px) {
       .cover {
         margin: 16px 16px 0;
-        border-radius: 24px;
       }
     }
 
@@ -224,7 +223,7 @@
       scroll-snap-align: start;
       width: 220px;
       height: 290px;
-      border-radius: 18px;
+
       overflow: hidden;
       background: linear-gradient(135deg, #f9c6cb, #fde8a0);
       box-shadow: 0 4px 14px rgba(0,0,0,0.08);
@@ -405,33 +404,33 @@
     .lightbox img {
       max-width: 100%;
       max-height: 85vh;
-      border-radius: 20px;
       object-fit: contain;
       transform: scale(0.92);
-      transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transition: opacity 0.18s ease, transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
-    .lightbox.open img {
-      transform: scale(1);
-    }
+    .lightbox.open img { transform: scale(1); }
 
-    .lightbox-close {
+    .lightbox-btn {
       position: absolute;
-      top: 18px;
-      right: 18px;
       background: rgba(255,255,255,0.18);
       border: none;
       color: white;
-      font-size: 20px;
-      width: 42px;
-      height: 42px;
+      font-size: 22px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       backdrop-filter: blur(6px);
+      flex-shrink: 0;
     }
+
+    .lightbox-close { top: 18px; right: 18px; font-size: 18px; }
+    .lightbox-prev  { left: 16px;  top: 50%; transform: translateY(-50%); }
+    .lightbox-next  { right: 16px; top: 50%; transform: translateY(-50%); }
 
     /* 푸터 */
     .footer {
@@ -587,8 +586,10 @@
 
 <!-- 라이트박스 -->
 <div class="lightbox" id="lightbox" onclick="closeLightboxBg(event)">
-  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <button class="lightbox-btn lightbox-close" onclick="closeLightbox()">✕</button>
+  <button class="lightbox-btn lightbox-prev"  onclick="navLightbox(-1)">‹</button>
   <img id="lightbox-img" src="" alt="사진 크게 보기">
+  <button class="lightbox-btn lightbox-next"  onclick="navLightbox(1)">›</button>
 </div>
 
 <script>
@@ -654,10 +655,24 @@
   }
 
   /* ---- 라이트박스 ---- */
+  const PHOTOS = ['./photo1.svg','./photo2.svg','./photo3.svg','./photo4.svg','./photo5.svg'];
+  let lbIndex = 0;
+
   function openLightbox(src) {
-    document.getElementById('lightbox-img').src = src;
+    lbIndex = PHOTOS.indexOf(src);
+    document.getElementById('lightbox-img').src = PHOTOS[lbIndex];
     document.getElementById('lightbox').classList.add('open');
     document.body.style.overflow = 'hidden';
+  }
+
+  function navLightbox(dir) {
+    const img = document.getElementById('lightbox-img');
+    img.style.opacity = '0';
+    setTimeout(() => {
+      lbIndex = (lbIndex + dir + PHOTOS.length) % PHOTOS.length;
+      img.src = PHOTOS[lbIndex];
+      img.style.opacity = '1';
+    }, 180);
   }
 
   function closeLightbox() {
